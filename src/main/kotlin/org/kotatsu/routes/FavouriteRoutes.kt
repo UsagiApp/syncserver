@@ -6,12 +6,10 @@ import io.ktor.server.routing.*
 import io.ktor.server.auth.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import org.kotatsu.database
 import org.kotatsu.model.favourite.FavouritesPackage
 import org.kotatsu.plugins.currentUser
 import org.kotatsu.resources.setFavouritesSynchronized
 import org.kotatsu.resources.syncFavourites
-import org.ktorm.database.TransactionIsolation
 
 fun Route.favouriteRoutes() {
     authenticate("auth-jwt") {

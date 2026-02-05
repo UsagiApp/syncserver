@@ -15,4 +15,5 @@ object MangaTable : Table<MangaEntity>("manga") {
     val state = enum<MangaState>("state").bindTo { it.state }
     val author = text("author").bindTo { it.author }
     val mangaSource = text("source").bindTo { it.source }
+    val isNsfw = boolean("nsfw").bindTo { it.isNsfw }
 }

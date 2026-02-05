@@ -20,6 +20,7 @@ interface MangaEntity : Entity<MangaEntity> {
     var state: MangaState?
     var author: String?
     var source: String
+    var isNsfw: Boolean
 
     val tags: Collection<TagEntity>
         get() = database.mangaTags.filter {

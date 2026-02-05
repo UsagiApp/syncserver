@@ -20,4 +20,5 @@ data class Manga(
     @SerialName("state") val state: String?,
     @SerialName("author") val author: String?,
     @SerialName("source") val source: String,
+    @SerialName("nsfw") val isNsfw: Boolean = false,
 )

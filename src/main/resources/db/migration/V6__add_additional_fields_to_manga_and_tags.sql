@@ -1,0 +1,5 @@
+ALTER TABLE manga
+    ADD COLUMN nsfw BOOL;
+
+ALTER TABLE tags
+    ADD COLUMN pinned BOOL;

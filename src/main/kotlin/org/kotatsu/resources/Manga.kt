@@ -31,6 +31,7 @@ suspend fun Database.upsertManga(manga: Manga) {
             set(it.state, MangaState.from(manga.state))
             set(it.author, manga.author?.truncated(64))
             set(it.mangaSource, manga.source.truncated(32))
+            set(it.isNsfw, manga.isNsfw)
             onDuplicateKey {
                 set(it.title, manga.title.truncated(100))
                 set(it.altTitle, manga.altTitle?.truncated(100))
@@ -43,6 +44,7 @@ suspend fun Database.upsertManga(manga: Manga) {
                 set(it.state, MangaState.from(manga.state))
                 set(it.author, manga.author?.truncated(64))
                 set(it.mangaSource, manga.source.truncated(32))
+                set(it.isNsfw, manga.isNsfw)
             }
         }
         for (tag in manga.tags) {
@@ -53,10 +55,12 @@ suspend fun Database.upsertManga(manga: Manga) {
                     set(it.title, tag.title.truncated(64))
                     set(it.key, tag.key.truncated(120))
                     set(it.source, tag.source.truncated(32))
+                    set(it.isPinned, tag.isPinned)
                     onDuplicateKey {
                         set(it.title, tag.title.truncated(64))
                         set(it.key, tag.key.truncated(120))
                         set(it.source, tag.source.truncated(32))
+                        set(it.isPinned, tag.isPinned)
                     }
                 }
             }

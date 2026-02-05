@@ -7,6 +7,7 @@ interface TagEntity : Entity<TagEntity> {
     var title: String
     var key: String
     var source: String
+    var isPinned: Boolean
 
     companion object : Entity.Factory<TagEntity>()
 }
