@@ -1,12 +1,6 @@
-# Kotatsu Synchronization Server
+# Kotatsu / Usagi Synchronization Server
 
-[Kotatsu](https://github.com/KotatsuApp/Kotatsu) is a free and open source manga reader for Android platform. Supports a lot of online catalogues on different languages with filters and search, offline reading from local storage, favourites, bookmarks, new chapters notifications and more features.
-
-List of official servers:
-|Domain|Location|Status|
-|---|---|---|
-|sync.kotatsu.app|Belarus|![[Uptime](https://health.kotatsu.app/api/badge/1/status)](https://status.kotatsu.app/api/badge/1/status)|
-|moe.shirizu.org|Netherlands|![[Uptime](https://health.kotatsu.app/api/badge/7/status)](https://status.kotatsu.app/api/badge/7/status)|
+[Usagi](https://github.com/UsagiApp/Usagi) is a free and open source manga reader for Android platform.
 
 ### What is synchronization?
 
@@ -29,7 +23,7 @@ Synchronization is needed to store your collection of favorites, history and cat
 #### Build image container:
 
 ```shell
-docker build github.com/KotatsuApp/kotatsu-syncserver.git -t kotatsuapp/syncserver
+docker build github.com/UsagiApp/syncserver.git -t usagiapp/syncserver
 ```
 
 #### Run container:
@@ -44,7 +38,7 @@ docker run -d -p 8080:8080 \
   -e JWT_SECRET=your_secret \
   -e ALLOW_NEW_REGISTER=true \
   --restart always \
-  --name kotatsu-sync kotatsuapp/syncserver
+  --name usagi-sync usagiapp/syncserver
 ```
 
 In case you don't want others to use your instance, register your accounts then set `ALLOW_NEW_REGISTER` to `false`.
@@ -54,8 +48,7 @@ In case you don't want others to use your instance, register your accounts then 
 #### Clone the repository:
 
 ```shell
-git clone https://github.com/KotatsuApp/kotatsu-syncserver.git \
-  && cd kotatsu-syncserver
+git clone https://github.com/UsagiApp/syncserver.git && cd syncserver
 ```
 
 #### Specify your settings (optional)
@@ -85,8 +78,8 @@ Requirements:
 Commands:
 
 ```shell
-git clone https://github.com/KotatsuApp/kotatsu-syncserver.git \
-  && cd kotatsu-syncserver \
+git clone https://github.com/UsagiApp/syncserver.git \
+  && cd syncserver \
   && ./gradlew shadowJar
 ```
 
